@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPassessment
 {
+
     public class Card
     {
         private int cardValue;
@@ -48,7 +50,13 @@ namespace OOPassessment
                 }
             }
         }
-    
+        public Card(int value, int Suit) //constructor for card
+        {
+            Value = value;
+            Suit = suit;
+        }
     
     }
+
+    
 }
