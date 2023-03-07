@@ -7,20 +7,24 @@ namespace OOPassessment
 {
     public class Pack
     {
-        List<Card> pack;
-        Card[] deckOfCards;
-        public Pack()
+        List<Card> pack = new List<Card>;
+        #Card[] deckOfCards;
+    
+        public Pack() //constructor for pack
         {
-            int[] suitList = {1,2,3,4};
-            int[] valueList = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-
-            for (int i = 0; i < suitList.Length; i++)
+            //int[] suitList = {1,2,3,4};
+            //int[] valueList = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+            suitLength = 4;
+            valueLength = 13;
+            
+            for (int i = 0; i < suitLength; i++)
             {
-                for (int j = 0; j < valueList.Length;i++)
+                for (int j = 0; j < valueLength;i++)
                 {
-
+                    pack.Add(new Card(i,j));
                 }
             }
+            
             
         }
 
