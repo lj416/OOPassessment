@@ -7,11 +7,48 @@ namespace OOPassessment
 {
     public class Card
     {
-        //Base for the Card class.
-        //Value: numbers 1 - 13
-        //Suit: numbers 1 - 4
-        //The 'set' methods for these properties could have some validation
-        public int Value{get; set;}
-        public int Suit{get; set;}
+        private int cardValue;
+        private int cardSuit;
+
+        public int Value
+        {
+            get
+            {
+                return cardValue;
+            }
+            set
+            {
+                if (cardValue > 1 && cardValue <14)
+                {
+                    cardValue = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Card value must be between 1-13");
+                }
+            }
+        }
+
+        public int Suit
+        {
+            get
+            {
+                return cardSuit;
+            }
+
+            set
+            {
+                if (cardSuit > 1 && cardSuit < 5)
+                {
+                    cardSuit = suit;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("Suit value must be between 1-4.");
+                }
+            }
+        }
+    
+    
     }
 }
