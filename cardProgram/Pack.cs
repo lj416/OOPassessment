@@ -7,7 +7,7 @@ namespace OOPassessment
 {
     public class Pack
     {
-        List<Card> pack = new List<Card>;
+        List<Card> pack = new List<Card>();
         //Card[] deckOfCards;
     
         public Pack() //constructor for pack
@@ -49,7 +49,24 @@ namespace OOPassessment
                 */
 
                 Random rnd = new Random();
-                int randomInt = rnd.Next(minValue,maxValue); //maxValue value will not be included in random gen so add 1 
+                
+                int packPointer = 0; //array index begins at 0
+                
+                while (packPointer != pack.Length)
+                {
+                    //generating random integer (0-51) for a random list index
+                    int randomInt = rnd.Next(0,pack.Length); //length of array is 1 greater than array index so it is 0-51
+                    
+                    //swapping element positions
+                    Card temp = pack[packPointer]; //temp value
+                    pack[packPointer] = pack[randomInt];
+                    pack[randomInt] = temp;
+
+                    //increment pointer
+                    packPointer = packPointer + 1; 
+                }
+                return true;
+            
             }
             else if (typeOfShuffle = 2) //Riffle shuffle
             {
@@ -58,6 +75,11 @@ namespace OOPassessment
                 while counter is not the length of both packs, alternate between the two halves and add the top card to pack
                 when done return true
                 */
+
+                //first half index: 0-26, doesn't include 26th element
+                //second half index: 26-52
+
+                return true;
 
             }
             else if (typeOfShuffle = 3) //3 No shuffle 
