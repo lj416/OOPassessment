@@ -1,0 +1,5 @@
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Debug/net7.0/cardProgram.csproj.AssemblyReference.cache
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Debug/net7.0/cardProgram.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Debug/net7.0/cardProgram.AssemblyInfoInputs.cache
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Debug/net7.0/cardProgram.AssemblyInfo.cs
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Debug/net7.0/cardProgram.csproj.CoreCompileInputs.cache
