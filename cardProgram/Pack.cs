@@ -7,7 +7,10 @@ namespace OOPassessment
 {
     public class Pack
     {
-        List<Card> pack = new List<Card>();
+        public static List<Card> pack = new List<Card>(); //full pack of cards
+        public static List<Card> firstHalfOfPack = new List<Card>(); //for riffle shuffle
+        public static List<Card> secondHalfOfPack = new List<Card>(); //for riffle shuffle
+
         //Card[] deckOfCards;
     
         public Pack() //constructor for pack
@@ -66,18 +69,32 @@ namespace OOPassessment
                     packPointer = packPointer + 1; 
                 }
                 return true;
-            
+            exception
             }
             else if (typeOfShuffle = 2) //Riffle shuffle
             {
                 /*
                 split the pack into two halves
-                while counter is not the length of both packs, alternate between the two halves and add the top card to pack
+                while pointer is not the length of both packs, alternate between the two halves and add the top card to pack
                 when done return true
                 */
 
                 //first half index: 0-26, doesn't include 26th element
                 //second half index: 26-52
+                int rifflePointer1 = 0; //pointer for first half
+                int rifflePointer2 = 26; //pointer for second half
+
+                firstHalfOfPack.AddRange(pack.GetRange(0,26)); //goes up to 25
+                secondHalfOfPack.AddRange(pack.GetRange(26,52)); //26-51
+
+                while (rifflePointer1 < 26 && rifflePointer2 < 52)
+                {
+                    pack[rifflePointer1] = firstHalfOfPack[rifflePointer1]; 
+                    pack[rifflePointer2] = secondHalfOfPack[rifflePointer2];
+
+                    rifflePointer1 = rifflePointer1 + 1;
+                    rifflePointer2 = rifflePointer2 + 1;
+                }
 
                 return true;
 
