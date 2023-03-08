@@ -11,6 +11,8 @@ namespace OOPassessment
         static void Main(string[] args)
         {
             System.Console.WriteLine("Hello World");
+            Pack packOfCards = new Pack();
+            packOfCards.outputPack();
         }
     }
 }
