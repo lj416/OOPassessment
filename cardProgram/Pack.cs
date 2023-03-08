@@ -158,7 +158,7 @@ namespace OOPassessment
             }
         }
 
-        public void outputPack(pack)
+        public void outputPack()
         {
             Card cardToOutput;
             for (int i = 0; i < pack.Count; i++) //for a full pack, pack.Count should be 52. pack index ends at 51 for 52 cards
