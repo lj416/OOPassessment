@@ -28,7 +28,7 @@ namespace OOPassessment
                     pack.Add(new Card(i,j)); //append the created card to list pack
                 }
             }
-            
+            System.Console.WriteLine($"AMOUNT OF CARDS IN PACK {pack.Count}."); //expect 52 cards
             
         }
 
@@ -153,6 +153,15 @@ namespace OOPassessment
                     dealtCard.Add(toDeal);
                     return dealtCard; //consists of multiple cards rather than just one
                 }
+            }
+        }
+
+        public outputPack()
+        {
+            Card cardToOutput;
+            for (int i = 0; i < pack.Count; i++) //for a full pack, pack.Count should be 52. pack index ends at 51 for 52 cards
+            {
+                cardToOutput.outputCard();
             }
         }
     }
