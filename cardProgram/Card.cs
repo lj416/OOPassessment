@@ -43,11 +43,11 @@ namespace OOPassessment
             {
                 if (cardSuit > 1 && cardSuit < 5)
                 {
-                    cardSuit = newSuit;
+                    cardSuit = suit;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Suit value must be between 1-4.");
+                    throw new ArgumentOutOfRangeException("Suit value must be between 1-4."); //for the case where if condition isn't met
                 }
             }
         }
