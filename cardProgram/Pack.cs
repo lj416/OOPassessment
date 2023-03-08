@@ -10,6 +10,7 @@ namespace OOPassessment
         public static List<Card> pack = new List<Card>(); //full pack of cards
         public static List<Card> firstHalfOfPack = new List<Card>(); //for riffle shuffle
         public static List<Card> secondHalfOfPack = new List<Card>(); //for riffle shuffle
+        public static List<Card> dealtCard = new List<Card>();
 
         //Card[] deckOfCards;
     
@@ -28,12 +29,6 @@ namespace OOPassessment
                 }
             }
             
-            
-        }
-
-        public static Card deal()
-        {//last
-            //deals one card
             
         }
 
@@ -84,6 +79,7 @@ namespace OOPassessment
                 int rifflePointer1 = 0; //pointer for first half
                 int rifflePointer2 = 26; //pointer for second half
 
+                //splitting the pack into two halves
                 firstHalfOfPack.AddRange(pack.GetRange(0,26)); //goes up to 25
                 secondHalfOfPack.AddRange(pack.GetRange(26,52)); //26-51
 
@@ -111,7 +107,25 @@ namespace OOPassessment
                 System.Console.WriteLine("Invalid, value must be 1-3.");
         }
 
+        public static Card deal()
+        {
+            //deals one card
+            dealtCard.Clear(); //empty array for each time deal method is run
 
+            if (pack.Count = 0) //if there are no cards
+            {
+                System.Console.WriteLine("The pack of cards is empty.");
+                return null;
+            }
+            else
+            {
+                Card toDeal = pack(pack.Last());
+                pack.RemoveAt(pack.Last()); //removes the card from the pack
+
+                dealtCard.Add(toDeal);
+                return toDeal;
+            }
+        }
         public static List<Card> dealCard(int amount)
         {
             //deals the number of cards specified by amount
