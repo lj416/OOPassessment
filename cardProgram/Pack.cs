@@ -129,7 +129,31 @@ namespace OOPassessment
         public static List<Card> dealCard(int amount)
         {
             //deals the number of cards specified by amount
-          
+            if (pack.Count = 0) //case for empty pack
+            {
+                System.Console.WriteLine($"The pack of cards is empty, cannot deal {amount} cards.");
+                return null;
+            }
+            else if (pack.Count < amount) //condition for not enough cards to draw given amount
+            {
+                System.Console.WriteLine($"You want to draw {amount} cards but there are only {pack.Count} cards remaining.");
+                System.Console.WriteLine("Try a different amount of cards to deal");
+                return null;
+            }
+            else
+            {
+                //getting cards from top of the pack for specified amount of times
+                for (int i = 0; i < amount; i++)
+                {
+                    dealtCard.Clear(); //empties the array
+
+                    Card toDeal = pack(pack.Last());
+                    pack.RemoveAt(pack.Last()); //removes the card from the pack
+
+                    dealtCard.Add(toDeal);
+                    return dealtCard; //consists of multiple cards rather than just one
+                }
+            }
         }
     }
 }
