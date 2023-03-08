@@ -18,6 +18,7 @@ namespace OOPassessment
             {
                 return cardValue;
             }
+            
             set
             {
                 if (cardValue > 1 && cardValue <14)
