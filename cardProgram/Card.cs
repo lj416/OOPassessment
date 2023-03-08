@@ -18,7 +18,7 @@ namespace OOPassessment
             {
                 return cardValue;
             }
-            
+
             set
             {
                 if (cardValue > 1 && cardValue <14)
@@ -43,7 +43,7 @@ namespace OOPassessment
             {
                 if (cardSuit > 1 && cardSuit < 5)
                 {
-                    cardSuit = suit;
+                    cardSuit = newSuit;
                 }
                 else
                 {
@@ -51,7 +51,7 @@ namespace OOPassessment
                 }
             }
         }
-        public Card(int value, int Suit) //constructor for card
+        public Card(int value, int suit) //constructor for card
         {
             Value = value;
             Suit = suit;

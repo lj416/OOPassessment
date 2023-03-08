@@ -37,7 +37,7 @@ namespace OOPassessment
             //shuffles the card pack based on the type of shuffle
             //1: Fisher-Yates Shuffle  2: Riffle Shuffle  3: No Shuffle
             
-            if (typeofShuffle = 1) //Fisher-Yates shuffle
+            if (typeOfShuffle = 1) //Fisher-Yates shuffle
             {
                 /*
                 starts at top of pack (counter)
