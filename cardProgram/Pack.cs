@@ -33,7 +33,7 @@ namespace OOPassessment
             
         }
 
-        public static bool shuffleCardPack(int typeOfShuffle)
+        public bool shuffleCardPack(int typeOfShuffle)
         {
             //shuffles the card pack based on the type of shuffle
             //1: Fisher-Yates Shuffle  2: Riffle Shuffle  3: No Shuffle
@@ -121,8 +121,9 @@ namespace OOPassessment
             }
             else
             {
-                Card toDeal = pack(pack.Last());
-                pack.RemoveAt(pack.Last()); //removes the card from the pack
+                int topCardIndex = pack.Count-1;
+                Card toDeal = pack[topCardIndex];
+                pack.RemoveAt(topCardIndex); //removes the card from the pack
 
                 dealtCard.Add(toDeal);
                 return toDeal;
@@ -149,7 +150,7 @@ namespace OOPassessment
                 {
                     dealtCard.Clear(); //empties the array
                     int topCardIndex = pack.Count-1;
-                    Card toDeal = pack(topCardIndex);
+                    Card toDeal = pack[topCardIndex];
                     pack.RemoveAt(topCardIndex); //removes the card from the pack
 
                     dealtCard.Add(toDeal);
@@ -161,7 +162,7 @@ namespace OOPassessment
 
         public void outputPack()
         {
-            Card cardToOutput;
+            var cardToOutput;
             for (int i = 0; i < pack.Count; i++) //for a full pack, pack.Count should be 52. pack index ends at 51 for 52 cards
             {
                 cardToOutput.outputCard();
