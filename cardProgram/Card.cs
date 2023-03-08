@@ -21,7 +21,7 @@ namespace OOPassessment
 
             set
             {
-                if (cardValue > 0 && cardValue <14)
+                if (cardValue > -1 && cardValue <14)
                 {
                     cardValue = Value;
                 }
@@ -42,7 +42,7 @@ namespace OOPassessment
 
             set
             {
-                if (cardSuit > 0 && cardSuit < 5)
+                if (cardSuit > -1 && cardSuit < 5)
                 {
                     cardSuit = Suit;
                 }

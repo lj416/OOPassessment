@@ -11,9 +11,9 @@ namespace OOPassessment
     {
         static void Main(string[] args)
         {
-            //System.Console.WriteLine("Hello World");
+            System.Console.WriteLine("Hello World");
             Pack packOfCards = new Pack();
-            //packOfCards.outputPack(); //output the pack 
+            packOfCards.outputPack(); //output the pack 
 
 
             bool shuffleCheck1 = packOfCards.shuffleCardPack(1);
