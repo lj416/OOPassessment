@@ -69,7 +69,7 @@ namespace OOPassessment
                     packPointer = packPointer + 1; 
                 }
                 return true;
-            exception
+            
             }
             else if (typeOfShuffle = 2) //Riffle shuffle
             {
@@ -90,7 +90,10 @@ namespace OOPassessment
                 while (rifflePointer1 < 26 && rifflePointer2 < 52)
                 {
                     pack[rifflePointer1] = firstHalfOfPack[rifflePointer1]; 
-                    pack[rifflePointer2] = secondHalfOfPack[rifflePointer2];
+
+                    rifflePointer1 = rifflePointer1 + 1; //increment first pointer for value from second half of pack
+
+                    pack[rifflePointer1] = secondHalfOfPack[rifflePointer2];
 
                     rifflePointer1 = rifflePointer1 + 1;
                     rifflePointer2 = rifflePointer2 + 1;
@@ -102,7 +105,7 @@ namespace OOPassessment
             else if (typeOfShuffle = 3) //3 No shuffle 
             {
                 System.Console.WriteLine("The card pack stays as it is.");
-                return true;
+                return false;
             }
             else
                 System.Console.WriteLine("Invalid, value must be 1-3.");
