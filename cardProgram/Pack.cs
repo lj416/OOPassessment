@@ -37,7 +37,7 @@ namespace OOPassessment
             //shuffles the card pack based on the type of shuffle
             //1: Fisher-Yates Shuffle  2: Riffle Shuffle  3: No Shuffle
             
-            if (typeOfShuffle = 1) //Fisher-Yates shuffle
+            if (typeOfShuffle == 1) //Fisher-Yates shuffle
             {
                 /*
                 starts at top of pack (counter)
@@ -50,10 +50,10 @@ namespace OOPassessment
                 
                 int packPointer = 0; //array index begins at 0
                 
-                while (packPointer != pack.Length)
+                while (packPointer != pack.Count-1)
                 {
                     //generating random integer (0-51) for a random list index
-                    int randomInt = rnd.Next(0,pack.Length); //length of array is 1 greater than array index so it is 0-51
+                    int randomInt = rnd.Next(0,pack.Count); //elements of array is 1 greater than array index so it is 0-51
                     
                     //swapping element positions
                     Card temp = pack[packPointer]; //temp value
@@ -66,7 +66,7 @@ namespace OOPassessment
                 return true;
             
             }
-            else if (typeOfShuffle = 2) //Riffle shuffle
+            else if (typeOfShuffle == 2) //Riffle shuffle
             {
                 /*
                 split the pack into two halves
@@ -98,13 +98,14 @@ namespace OOPassessment
                 return true;
 
             }
-            else if (typeOfShuffle = 3) //3 No shuffle 
+            else if (typeOfShuffle == 3) //3 No shuffle 
             {
                 System.Console.WriteLine("The card pack stays as it is.");
                 return false;
             }
             else
                 System.Console.WriteLine("Invalid, value must be 1-3.");
+                return false;
         }
 
         public static Card deal()
@@ -112,7 +113,7 @@ namespace OOPassessment
             //deals one card
             dealtCard.Clear(); //empty array for each time deal method is run
 
-            if (pack.Count = 0) //if there are no cards
+            if (pack.Count == 0) //if there are no cards
             {
                 System.Console.WriteLine("The pack of cards is empty.");
                 return null;
@@ -129,7 +130,7 @@ namespace OOPassessment
         public static List<Card> dealCard(int amount)
         {
             //deals the number of cards specified by amount
-            if (pack.Count = 0) //case for empty pack
+            if (pack.Count == 0) //case for empty pack
             {
                 System.Console.WriteLine($"The pack of cards is empty, cannot deal {amount} cards.");
                 return null;
@@ -147,16 +148,17 @@ namespace OOPassessment
                 {
                     dealtCard.Clear(); //empties the array
 
-                    Card toDeal = pack(pack.Last());
-                    pack.RemoveAt(pack.Last()); //removes the card from the pack
+                    Card toDeal = pack(pack.Last);
+                    pack.RemoveAt(pack.Last); //removes the card from the pack
 
                     dealtCard.Add(toDeal);
-                    return dealtCard; //consists of multiple cards rather than just one
+                    
                 }
+                return dealtCard; //consists of multiple cards rather than just one
             }
         }
 
-        public void outputPack()
+        public void outputPack(pack)
         {
             Card cardToOutput;
             for (int i = 0; i < pack.Count; i++) //for a full pack, pack.Count should be 52. pack index ends at 51 for 52 cards
