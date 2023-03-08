@@ -55,7 +55,16 @@ namespace OOPassessment
             Value = value;
             Suit = suit;
         }
-    
+
+        public void outputCard()
+        {
+            string[] stringSuit = {"Hearts","Spades","Diamonds","Clubs"}; //hearts = 0, clubs = 3
+            string[] stringValue = {"Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"}; //ace = 0, king = 12
+
+            //output the name of the given card
+            System.Console.WriteLine(stringValue[Value-1]," of ",stringSuit[Suit-1]);
+
+        }
     }
 
     
