@@ -21,12 +21,13 @@ namespace OOPassessment
 
             set
             {
-                if (cardValue > 1 && cardValue <14)
+                if (cardValue > 0 && cardValue <14)
                 {
-                    cardValue = value;
+                    cardValue = Value;
                 }
                 else
                 {
+                    //System.Console.WriteLine("invalid value in value setter");
                     throw new ArgumentOutOfRangeException("Card value must be between 1-13");
                 }
             }
@@ -41,12 +42,13 @@ namespace OOPassessment
 
             set
             {
-                if (cardSuit > 1 && cardSuit < 5)
+                if (cardSuit > 0 && cardSuit < 5)
                 {
-                    cardSuit = suit;
+                    cardSuit = Suit;
                 }
                 else
                 {
+                    //System.Console.WriteLine("invalid value in suit setter");
                     throw new ArgumentOutOfRangeException("Suit value must be between 1-4."); //for the case where if condition isn't met
                 }
             }
