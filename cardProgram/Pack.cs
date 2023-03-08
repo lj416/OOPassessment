@@ -1,3 +1,4 @@
+using System.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -147,9 +148,9 @@ namespace OOPassessment
                 for (int i = 0; i < amount; i++)
                 {
                     dealtCard.Clear(); //empties the array
-
-                    Card toDeal = pack(pack.Last);
-                    pack.RemoveAt(pack.Last); //removes the card from the pack
+                    int topCardIndex = pack.Count-1;
+                    Card toDeal = pack(topCardIndex);
+                    pack.RemoveAt(topCardIndex); //removes the card from the pack
 
                     dealtCard.Add(toDeal);
                     
