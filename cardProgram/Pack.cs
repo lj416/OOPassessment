@@ -82,31 +82,11 @@ namespace OOPassessment
                 int rifflePointer2 = 26; //pointer for second half
 
                 //splitting the pack into two halves
-                //firstHalfOfPack.AddRange(pack.GetRange(0,25)); //goes up to 25
-                //secondHalfOfPack.AddRange(pack.GetRange(26,52)); //26-51
-
-                //Card[] firstHalfOfPack = { };
-                //Card[] secondHalfOfPack = { };
-
-                //int elements = pack.Count;
-                //int halfwayPoint = elements / 2;
 
                 Console.WriteLine("running riffler shuffle");
                 int i = 0;
                 while (i < (pack.Count / 2))
                 {
-                    /*for (int i = 0; i <= halfwayPoint; i++)
-                    {
-                        firstHalfOfPack[rifflePointer1] = pack[i];
-                        rifflePointer1 = rifflePointer1 + 1;
-                    }
-
-                    for (int i = 26; i <= elements; i++)
-                    {
-                        secondHalfOfPack[rifflePointer2] = pack[i];
-                        rifflePointer1 = rifflePointer1 + 1;
-                    }*/
-
                     firstHalfOfPack.Add(pack[i]);
                     firstHalfOfPack.Add(pack[i + pack.Count / 2]);
                     i++;
@@ -114,21 +94,6 @@ namespace OOPassessment
                 pack = firstHalfOfPack;
                 return true;
 
-                /*
-                while (rifflePointer1 < 26 && rifflePointer2 < 52)
-                {
-                    pack[rifflePointer1] = firstHalfOfPack[rifflePointer1]; 
-
-                    rifflePointer1 = rifflePointer1 + 1; //increment first pointer for value from second half of pack
-
-                    pack[rifflePointer1] = secondHalfOfPack[rifflePointer2];
-
-                    rifflePointer1 = rifflePointer1 + 1;
-                    rifflePointer2 = rifflePointer2 + 1;
-                }
-                */
-
-                return true;
 
             }
             else if (typeOfShuffle == 3) //3 No shuffle 
@@ -194,12 +159,6 @@ namespace OOPassessment
 
         public void outputPack()
         {
-            /*Card cardToOutput;
-            for (int i = 0; i < pack.Count; i++) //for a full pack, pack.Count should be 52. pack index ends at 51 for 52 cards
-            {
-                cardToOutput.outputCard();
-            }
-            */
             foreach (Card cardToOutput in pack)
             {
                 cardToOutput.outputCard();
