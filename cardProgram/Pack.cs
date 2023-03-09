@@ -19,12 +19,12 @@ namespace OOPassessment
         {
             //int[] suitList = {1,2,3,4};
             //int[] valueList = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-            int suitLength = 4; //integers rather than list
-            int valueLength = 13;
+             //integers rather than list
+          
             
-            for (int i = 0; i < suitLength; i++) //suits 1-4
+            for (int i = 1; i <= 4;i++) //suits 1-4
             {
-                for (int j = 0; j < valueLength;i++) //values 1-13
+                for (int j = 1; j <= 13;j++) //values 1-13
                 {
                     pack.Add(new Card(i,j)); //append the created card to list pack
                 }
@@ -101,22 +101,22 @@ namespace OOPassessment
             }
             else if (typeOfShuffle == 3) //3 No shuffle 
             {
-                System.Console.WriteLine("The card pack stays as it is.");
-                return false;
+                Console.WriteLine("The card pack stays as it is.");
+                return true;
             }
             else
-                System.Console.WriteLine("Invalid, value must be 1-3.");
+                Console.WriteLine("Invalid, value must be 1-3.");
                 return false;
         }
 
-        public static Card deal()
+        public static Card dealCard()
         {
             //deals one card
             dealtCard.Clear(); //empty array for each time deal method is run
 
             if (pack.Count == 0) //if there are no cards
             {
-                System.Console.WriteLine("The pack of cards is empty.");
+                Console.WriteLine("The pack of cards is empty.");
                 return null;
             }
             else
@@ -134,13 +134,13 @@ namespace OOPassessment
             //deals the number of cards specified by amount
             if (pack.Count == 0) //case for empty pack
             {
-                System.Console.WriteLine($"The pack of cards is empty, cannot deal {amount} cards.");
+                Console.WriteLine($"The pack of cards is empty, cannot deal {amount} cards.");
                 return null;
             }
             else if (pack.Count < amount) //condition for not enough cards to draw given amount
             {
-                System.Console.WriteLine($"You want to draw {amount} cards but there are only {pack.Count} cards remaining.");
-                System.Console.WriteLine("Try a different amount of cards to deal");
+                Console.WriteLine($"You want to draw {amount} cards but there are only {pack.Count} cards remaining.");
+                Console.WriteLine("Try a different amount of cards to deal");
                 return null;
             }
             else
@@ -170,7 +170,7 @@ namespace OOPassessment
             */
             foreach (Card cardToOutput in pack)
             {
-                System.Console.WriteLine(cardToOutput);
+                cardToOutput.outputCard();
             }
         }
     }
