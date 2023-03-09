@@ -42,6 +42,7 @@ namespace OOPassessment
 
             Console.WriteLine("\nCards in pack\n"); //outputs cards remaining in the pack
             Pack.outputPack();
+            Console.WriteLine("---------------\n");
 
             //for dealing an inputted amount of cards
             while (validInput == false)
