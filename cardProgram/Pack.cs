@@ -33,6 +33,7 @@ namespace OOPassessment
             
             if (typeOfShuffle == 1) //Fisher-Yates shuffle
             {
+                //additional class used
                 Random rnd = new Random();
                 
                 int packPointer = 0; //array index begins at 0
@@ -115,6 +116,7 @@ namespace OOPassessment
             }
         }
 
+        //additional method
         public static void outputPack() //output the whole pack of cards
         { 
             foreach (Card cardToOutput in pack)
@@ -123,6 +125,7 @@ namespace OOPassessment
             }
         }
 
+        //additional method
         internal static void dealCard(string amountToDeal)
         {
             throw new NotImplementedException();
