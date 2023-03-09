@@ -7,6 +7,8 @@ namespace OOPassessment
 	{
 		public static void Test()
 		{
+            bool validInput = false;
+
             Pack packOfCards = new Pack();
 
             Console.WriteLine("initial pack:");
@@ -41,6 +43,26 @@ namespace OOPassessment
             Console.WriteLine("\nCards in pack\n"); //outputs cards remaining in the pack
             Pack.outputPack();
 
+            //for dealing an inputted amount of cards
+            while (validInput == false)
+            {
+                Console.WriteLine("Enter an integer for the amount of cards to deal: "); //asks for user input
+                string amountToDeal = Console.ReadLine();
+
+                try //attempts to convert str to int
+                {
+                    //Convert.Parse(amountToDeal);
+                    int intAmountToDeal = Int32.Parse(amountToDeal);
+                    Pack.dealCard(intAmountToDeal);
+                    validInput = true; //while loop exit condition
+                }
+                catch //if a value that is not an int is input, it shows this message and branches back asking for user input
+                {
+                    Console.WriteLine("Invalid, re-enter your value\n");
+                    validInput = false;
+                }
+              
+            }
             Console.ReadKey(); //waits for any keyboard stroke before terminal closes
         }
 	}

@@ -10,7 +10,7 @@ namespace OOPassessment
     {
         public static List<Card> pack = new List<Card>(); //full pack of cards
         public static List<Card> firstHalfOfPack = new List<Card>(); //for riffle shuffle
-        //public static List<Card> secondHalfOfPack = new List<Card>(); //for riffle shuffle
+
         public static List<Card> dealtCards = new List<Card>();
 
         public Pack() //constructor for pack
@@ -20,7 +20,7 @@ namespace OOPassessment
             {
                 for (int j = 1; j <= 13;j++) //values 1-13
                 {
-                    pack.Add(new Card(j,i)); //append the created card to list pack
+                    pack.Add(new Card(j,i));  //append the created card to lsit pack
                 }
             }
             System.Console.WriteLine($"AMOUNT OF CARDS IN PACK {pack.Count}."); //expect 52 cards
@@ -37,17 +37,16 @@ namespace OOPassessment
                 
                 int packPointer = 0; //array index begins at 0
                 
-                while (packPointer != pack.Count-1)
+                while (packPointer != pack.Count-1) //pack.Count so that it works for any size of pack array
                 {
                     //generating random integer for a random list index within the lists index values
-                    int randomInt = rnd.Next(0,pack.Count); //elements of array is 1 greater than array index so it is 0-51
+                    int randomInt = rnd.Next(0,pack.Count); 
                     
                     //swapping element positions
                     Card temp = pack[packPointer]; //temp value
                     pack[packPointer] = pack[randomInt];
                     pack[randomInt] = temp;
 
-                    //increment pointer
                     packPointer = packPointer + 1; 
                 }
                 return true;
@@ -88,15 +87,14 @@ namespace OOPassessment
             {
           
                 Card toDeal = pack[0]; //any value at 1st element (top of the pack)
-                pack.RemoveAt(0); //removes the card from the pack
-
+                pack.RemoveAt(0); 
                 return toDeal;
             }
         }
 
         public static List<Card> dealCard(int amount)//deals the number of cards specified by amount
         {
-            if (pack.Count == 0) //case for empty pack
+            if (pack.Count == 0) 
             {
                 Console.WriteLine($"The pack of cards is empty, cannot deal {amount} cards.");
                 return null;
@@ -123,6 +121,11 @@ namespace OOPassessment
             {
                 cardToOutput.outputCard();
             }
+        }
+
+        internal static void dealCard(string amountToDeal)
+        {
+            throw new NotImplementedException();
         }
     }
 }

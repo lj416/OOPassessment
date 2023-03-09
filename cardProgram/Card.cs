@@ -30,7 +30,7 @@ namespace OOPassessment
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Card value must be between 1-13");
+                    throw new ArgumentOutOfRangeException("Card value must be between 1-13"); //for the case wher if condition isn't met due to value being out of range/bounds
                 }
             }
         }
@@ -50,7 +50,7 @@ namespace OOPassessment
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Suit value must be between 1-4."); //for the case where if condition isn't met
+                    throw new ArgumentOutOfRangeException("Suit value must be between 1-4."); //for the case wher if condition isn't met due to value being out of range/bound
                 }
             }
         }
