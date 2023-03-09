@@ -78,8 +78,8 @@ namespace OOPassessment
 
                 //first half index: 0-26, doesn't include 26th element
                 //second half index: 26-52
-                int rifflePointer1 = 0; //pointer for first half
-                int rifflePointer2 = 26; //pointer for second half
+                //int rifflePointer1 = 0; //pointer for first half
+                //int rifflePointer2 = 26; //pointer for second half
 
                 //splitting the pack into two halves
 
@@ -123,6 +123,7 @@ namespace OOPassessment
                 pack.RemoveAt(topCardIndex); //removes the card from the pack
 
                 dealtCard.Add(toDeal);
+                Console.WriteLine("Dealing card: ", toDeal);
                 return toDeal;
             }
         }
@@ -153,6 +154,11 @@ namespace OOPassessment
                     dealtCard.Add(toDeal);
                     
                 }
+                foreach (Card cardToOutput in dealtCard)
+                {
+                    cardToOutput.outputCard();
+                }
+                Console.WriteLine("Dealing cards:"+dealtCard);
                 return dealtCard; //consists of multiple cards rather than just one
             }
         }

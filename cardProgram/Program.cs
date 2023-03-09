@@ -34,8 +34,8 @@ namespace OOPassessment
             Console.WriteLine("---------------\n");
 
             
-            Card cardToDeal = Pack.dealCard();
-            Console.WriteLine(cardToDeal);
+            Pack.dealCard();
+            //Console.WriteLine(cardToDeal.outputCard());
 
             Console.ReadKey();
 
