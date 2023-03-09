@@ -10,11 +10,12 @@ namespace OOPassessment
     {
         public static List<Card> pack = new List<Card>(); //full pack of cards
         public static List<Card> firstHalfOfPack = new List<Card>(); //for riffle shuffle
-        public static List<Card> secondHalfOfPack = new List<Card>(); //for riffle shuffle
+        //public static List<Card> secondHalfOfPack = new List<Card>(); //for riffle shuffle
         public static List<Card> dealtCard = new List<Card>();
+        
 
         //Card[] deckOfCards;
-    
+
         public Pack() //constructor for pack
         {
             //int[] suitList = {1,2,3,4};
@@ -26,7 +27,7 @@ namespace OOPassessment
             {
                 for (int j = 1; j <= 13;j++) //values 1-13
                 {
-                    pack.Add(new Card(i,j)); //append the created card to list pack
+                    pack.Add(new Card(j,i)); //append the created card to list pack
                 }
             }
             System.Console.WriteLine($"AMOUNT OF CARDS IN PACK {pack.Count}."); //expect 52 cards
@@ -81,9 +82,39 @@ namespace OOPassessment
                 int rifflePointer2 = 26; //pointer for second half
 
                 //splitting the pack into two halves
-                firstHalfOfPack.AddRange(pack.GetRange(0,26)); //goes up to 25
-                secondHalfOfPack.AddRange(pack.GetRange(26,52)); //26-51
+                //firstHalfOfPack.AddRange(pack.GetRange(0,25)); //goes up to 25
+                //secondHalfOfPack.AddRange(pack.GetRange(26,52)); //26-51
 
+                //Card[] firstHalfOfPack = { };
+                //Card[] secondHalfOfPack = { };
+
+                //int elements = pack.Count;
+                //int halfwayPoint = elements / 2;
+
+                Console.WriteLine("running riffler shuffle");
+                int i = 0;
+                while (i < (pack.Count / 2))
+                {
+                    /*for (int i = 0; i <= halfwayPoint; i++)
+                    {
+                        firstHalfOfPack[rifflePointer1] = pack[i];
+                        rifflePointer1 = rifflePointer1 + 1;
+                    }
+
+                    for (int i = 26; i <= elements; i++)
+                    {
+                        secondHalfOfPack[rifflePointer2] = pack[i];
+                        rifflePointer1 = rifflePointer1 + 1;
+                    }*/
+
+                    firstHalfOfPack.Add(pack[i]);
+                    firstHalfOfPack.Add(pack[i + pack.Count / 2]);
+                    i++;
+                }
+                pack = firstHalfOfPack;
+                return true;
+
+                /*
                 while (rifflePointer1 < 26 && rifflePointer2 < 52)
                 {
                     pack[rifflePointer1] = firstHalfOfPack[rifflePointer1]; 
@@ -95,6 +126,7 @@ namespace OOPassessment
                     rifflePointer1 = rifflePointer1 + 1;
                     rifflePointer2 = rifflePointer2 + 1;
                 }
+                */
 
                 return true;
 

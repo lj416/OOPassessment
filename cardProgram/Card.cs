@@ -13,7 +13,7 @@ namespace OOPassessment
         private int cardSuit;
 
         readonly string[] stringSuit = { "Hearts", "Spades", "Diamonds", "Clubs" }; //hearts = 0, clubs = 3
-        readonly string[] stringValue = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" }; //ace = 0, king = 12
+        readonly string[] stringValue = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine","Ten", "Jack", "Queen", "King" }; //ace = 0, king = 12
 
         public int Value
         {
@@ -24,9 +24,9 @@ namespace OOPassessment
 
             set
             {
-                if (Value >= 1 || Value <= 13)
+                if (value >= 1 || value <= 13)
                 {
-                    cardValue = Value;
+                    cardValue = value;
                 }
                 else
                 {
@@ -45,9 +45,9 @@ namespace OOPassessment
 
             set
             {
-                if (Suit >= 1 || Suit <= 4)
+                if (value >= 1 || value <= 4)
                 {
-                    cardSuit = Suit;
+                    cardSuit = value;
                 }
                 else
                 {
@@ -67,8 +67,7 @@ namespace OOPassessment
 
 
             //output the name of the given card
-            
-            Console.WriteLine(stringValue[Value] + " of " + stringSuit[Suit]);
+            Console.WriteLine(stringValue[Value-1] + " of " + stringSuit[Suit-1]);
             
 
         }
