@@ -11,6 +11,9 @@ namespace OOPassessment
     {
          static void Main(string[] args)
         {
+
+            Testing.Test();
+            /*
             Pack packOfCards = new Pack();
             
             
@@ -43,6 +46,7 @@ namespace OOPassessment
             Console.WriteLine("\nCards in pack\n");
             Pack.outputPack();
             Console.ReadKey();
+            */
 
         }
     }
