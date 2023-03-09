@@ -9,34 +9,39 @@ namespace OOPassessment
 {
     class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
             Pack packOfCards = new Pack();
             
             
-            packOfCards.outputPack(); //output the pack 
+            Pack.outputPack(); //output the pack 
 
 
             bool shuffleCheck1 = packOfCards.shuffleCardPack(1);
             Console.WriteLine("fisher yates shuffle: "+shuffleCheck1);
-            packOfCards.outputPack();
+            Pack.outputPack();
             Console.WriteLine("---------------\n");
 
             bool shuffleCheck2 = packOfCards.shuffleCardPack(2);
             Console.WriteLine("riffle shuffle: "+shuffleCheck2);
-            packOfCards.outputPack();
+            Pack.outputPack();
             Console.WriteLine("---------------\n");
 
             bool shuffleCheck3 = packOfCards.shuffleCardPack(3);
             Console.WriteLine("no shuffle: "+shuffleCheck3);
-            packOfCards.outputPack();
+            Pack.outputPack();
             Console.WriteLine("---------------\n");
 
             
-            Pack.dealCard();
-            //Console.WriteLine(cardToDeal.outputCard());
+            Pack.dealCard(10);
+            Console.WriteLine("Cards that have been dealt\n");
+            foreach (Card card in Pack.dealtCards)
+            {
+                card.outputCard();
+            }
 
+            Console.WriteLine("\nCards in pack\n");
+            Pack.outputPack();
             Console.ReadKey();
 
         }

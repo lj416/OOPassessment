@@ -11,7 +11,7 @@ namespace OOPassessment
         public static List<Card> pack = new List<Card>(); //full pack of cards
         public static List<Card> firstHalfOfPack = new List<Card>(); //for riffle shuffle
         //public static List<Card> secondHalfOfPack = new List<Card>(); //for riffle shuffle
-        public static List<Card> dealtCard = new List<Card>();
+        public static List<Card> dealtCards = new List<Card>();
         
 
         //Card[] deckOfCards;
@@ -106,10 +106,10 @@ namespace OOPassessment
                 return false;
         }
 
+        //Deals one card
         public static Card dealCard()
         {
-            //deals one card
-            dealtCard.Clear(); //empty array for each time deal method is run
+           
 
             if (pack.Count == 0) //if there are no cards
             {
@@ -118,12 +118,10 @@ namespace OOPassessment
             }
             else
             {
-                int topCardIndex = pack.Count-1;
-                Card toDeal = pack[topCardIndex];
-                pack.RemoveAt(topCardIndex); //removes the card from the pack
-
-                dealtCard.Add(toDeal);
-                Console.WriteLine("Dealing card: ", toDeal);
+          
+                Card toDeal = pack[0]; //any value at 1st element (top of the pack)
+                pack.RemoveAt(0); //removes the card from the pack
+                //Console.WriteLine("Dealing card: ", toDeal);
                 return toDeal;
             }
         }
@@ -146,24 +144,23 @@ namespace OOPassessment
                 //getting cards from top of the pack for specified amount of times
                 for (int i = 0; i < amount; i++)
                 {
-                    dealtCard.Clear(); //empties the array
-                    int topCardIndex = pack.Count-1;
-                    Card toDeal = pack[topCardIndex];
-                    pack.RemoveAt(topCardIndex); //removes the card from the pack
+                    dealtCards.Add(dealCard());
+                    //dealtCard.Clear(); //empties the array
+                    //Card topCard = pack[0];
+                    //pack.RemoveAt(0);
+                    //dealtCard.Add(topCard); //removes the card from the pack
+                    //.AddRange(dealtCard);
+                   // return topCard;
+                    //pack.RemoveAt(0); 
 
-                    dealtCard.Add(toDeal);
+                    //dealtCard.Add(topCard);
                     
                 }
-                foreach (Card cardToOutput in dealtCard)
-                {
-                    cardToOutput.outputCard();
-                }
-                Console.WriteLine("Dealing cards:"+dealtCard);
-                return dealtCard; //consists of multiple cards rather than just one
+                return dealtCards;
             }
         }
 
-        public void outputPack()
+        public static void outputPack()
         {
             foreach (Card cardToOutput in pack)
             {
