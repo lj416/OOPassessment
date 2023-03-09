@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace OOPassessment
 {
     class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello World");
+            Testing.Test();
         }
     }
 }

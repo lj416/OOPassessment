@@ -1,0 +1,15 @@
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/bin/Release/net7.0/cardProgram
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/bin/Release/net7.0/cardProgram.deps.json
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/bin/Release/net7.0/cardProgram.runtimeconfig.json
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/bin/Release/net7.0/cardProgram.dll
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/bin/Release/net7.0/cardProgram.pdb
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.csproj.AssemblyReference.cache
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.AssemblyInfoInputs.cache
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.AssemblyInfo.cs
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.csproj.CoreCompileInputs.cache
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.dll
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/refint/cardProgram.dll
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.pdb
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/cardProgram.genruntimeconfig.cache
+/Users/lj/Documents/csharpprojects/OOPassessment/cardProgram/obj/Release/net7.0/ref/cardProgram.dll
